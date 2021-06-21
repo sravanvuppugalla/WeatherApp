@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlListItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_text_background"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/button_height"
+    android:paddingRight="@dimen/button_height">
+
+    <TextView
+        android:id="@+id/tvListItemType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_normal" />
+
+    <TextView
+        android:id="@+id/tvListItemTypeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_normal" />
+
+</RelativeLayout>

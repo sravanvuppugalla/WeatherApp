@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="searchViewModel"
+            type="com.sample.weatherapp.ui.search.SearchViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_large"
+        android:paddingRight="@dimen/margin_large">
+
+        <EditText
+            android:id="@+id/etCityInput"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center"
+            android:hint="@string/city_hint"
+            android:text="@={searchViewModel.searchcity}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal" />
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/btnProgressLookUp"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:background="@drawable/rounded_corners"
+            android:onClick="@{()-> searchViewModel.getWebServiceDetails()}"
+            android:text="@string/look_up"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal"
+            android:visibility="gone"
+            app:spinning_bar_color="@color/purple_700"
+            app:spinning_bar_padding="2dp"
+            app:spinning_bar_width="2dp" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listItem"
+            type="com.sample.weatherapp.model.ListItem" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color">
+
+        <TextView
+            android:id="@+id/tvInofTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/button_height"
+            android:layout_marginBottom="@dimen/button_height"
+            android:text="@{` ` + listItem.component5().component1()}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_big"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvInfoFeels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvInofTemp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:text="@{@string/feels_like + listItem.component5().component2()}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal" />
+
+        <TextView
+            android:id="@+id/tvInfoMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvInfoFeels"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:text="@{listItem.component4().get(0).component2()}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_xxnormal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvInfoMain"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:text="@{listItem.component4().get(0).component3()}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal" />
+
+
+    </RelativeLayout>
+
+</layout>
